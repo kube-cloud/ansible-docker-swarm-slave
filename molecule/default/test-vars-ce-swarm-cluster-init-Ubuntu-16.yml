@@ -68,12 +68,6 @@ docker_post_install_script_parameters:
  - "param3"
  - "param4"
 
-# Is docker swarm enabled ?
-docker_swarm_enabled: true
-
-# Is host docker swarm master ?
-docker_swarm_master: true
-
 # Docker swarm master join token
 docker_swarm_master_join_token: ""
 
@@ -86,7 +80,7 @@ docker_swarm_advertise_port: 2377
 # Docker swarm extra options
 docker_swarm_extras_options:
  - "--availability active"
- - "--task-history-limit 5"
+ - "--default-addr-pool 10.20.0.0/16"
 
 # Install Portainer service stack
 docker_swarm_portainer_enabled: true
