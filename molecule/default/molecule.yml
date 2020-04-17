@@ -9,7 +9,7 @@ driver:
 lint: |
     yamllint .
 platforms:
-    - name: ${MOLECULE_DISTRO:-swarm-master}
+    - name: "${MOLECULE_DISTRO:-centos7}-swarm-master"
       image: "kubecloudsas/docker-ansible-test:${MOLECULE_DISTRO:-centos7}"
       command: ${MOLECULE_DOCKER_COMMAND:-""}
       volumes:
@@ -24,7 +24,7 @@ platforms:
           - "0.0.0.0:1330:2377/tcp"
       groups:
           - "swarm_init"
-    - name: ${MOLECULE_DISTRO:-swarm-slave-01}
+    - name: "${MOLECULE_DISTRO:-centos7}-swarm-slave-01"
       image: "kubecloudsas/docker-ansible-test:${MOLECULE_DISTRO:-centos7}"
       command: ${MOLECULE_DOCKER_COMMAND:-""}
       volumes:
@@ -39,7 +39,7 @@ platforms:
           - "0.0.0.0:1331:2377/tcp"
       groups:
           - "swarm_join"
-    - name: ${MOLECULE_DISTRO:-swarm-slave-02}
+    - name: "${MOLECULE_DISTRO:-centos7}-swarm-slave-02"
       image: "kubecloudsas/docker-ansible-test:${MOLECULE_DISTRO:-centos7}"
       command: ${MOLECULE_DOCKER_COMMAND:-""}
       volumes:
