@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/pypi/pyversions/testinfra.svg?style=flat)
 ![Licence](https://img.shields.io/github/license/kube-cloud/ansible-role-docker-swarm-slave.svg?style=flat)
 [![Travis Build](https://img.shields.io/travis/kube-cloud/ansible-role-docker-swarm-slave.svg?style=flat)](https://travis-ci.com/kube-cloud/ansible-role-docker-swarm-slave)
-[![Galaxy Role Downloads](https://img.shields.io/ansible/role/d/47986.svg?style=flat)](https://galaxy.ansible.com/jetune/docker-swarm-slave)
+[![Galaxy Role Downloads](https://img.shields.io/ansible/role/d/47994.svg?style=flat)](https://galaxy.ansible.com/jetune/docker_swarm_slave)
 
 Ansible role used to install Slave Docker Swarm Node (Engine/Compose implicitly) on Linux based Operating System.
 
@@ -46,7 +46,7 @@ See Sample for all variables
 
 # Usage
 
-* Install Role ``` ansible-galaxy install jetune.docker ```
+* Install Role ``` ansible-galaxy install jetune.docker_swarm_slave ```
 * use in your playbook : case of install from repository
 ```
 ---
