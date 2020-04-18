@@ -46,14 +46,10 @@
   debug:
    msg:
     - "Docker Swarm enabled              : true"
-    - "Docker Swarm master               : true"
+    - "Docker Swarm master               : false"
     - "Docker Swarm data directory       : {{ _docker_swarm_data_dir }}"
-    - "Docker Swarm stacks directory       : {{ _docker_swarm_stacks_dir }}"
     - "Docker Swarm advertise IP         : {{ docker_swarm_advertise_ip }}"
     - "Docker Swarm advertise port       : {{ docker_swarm_advertise_port }}"
-    - "Docker Swarm master join token    : {{ docker_swarm_master_join_token }}"
-    - "Docker Swarm master extras option : {{ docker_swarm_extras_options }}"
-    - "Docker Swarm portainer enabled    : {{ docker_swarm_portainer_enabled }}"
-    - "Docker Swarm portainer agent port : {{ docker_swarm_portainer_agent_port }}"
-    - "Docker Swarm portainer port       : {{ docker_swarm_portainer_port }}"
+    - "Docker Swarm worker join token    : {{ docker_swarm_worker_join_token }}"
+    - "Docker Swarm worker extras option : {{ docker_swarm_extras_options }}"
     - "Docker Swarm post install script  : {{ docker_swarm_post_install_script }}"
