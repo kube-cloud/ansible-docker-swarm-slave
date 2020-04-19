@@ -35,3 +35,11 @@
     {{ docker_swarm_advertise_ip }}:{{ docker_swarm_advertise_port }}
   when:
    - docker_swarm_worker_join_token | length > 0
+
+# Add node label if needed
+- name: "({{ os_with_version }}) SWARM-WORKER::INSTALL - Add node label if needed"
+  shell:
+   cmd: "docker node update --label-add {{ item.key }}={{ item.value }}"
+  loop: "{{ docker_swarm_node_labels }}"
+  when:
+   - docker_swarm_node_labels | length > 0
