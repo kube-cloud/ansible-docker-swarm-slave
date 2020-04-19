@@ -148,13 +148,4 @@ docker_swarm_post_install_script_parameters:
  - "param1"
  - "param2"
 
-# Docker swarm node label
-docker_swarm_node_labels:
- - key: "label_key_1"
-   value: "label_value_1"
- - key: "label_key_2"
-   value: "label_value_2"
- - key: "label_key_3"
-   value: "label_value_3"
-
 ```
