@@ -9,8 +9,8 @@ driver:
 lint: |
     yamllint .
 platforms:
-    - name: ${MOLECULE_NAME:-bionic}
-      image: "${MOLECULE_DISTRO:-kubecloudsas/docker-ansible-test:v1.1.0-xenial-py3}"
+    - name: "${MOLECULE_NAME:-centos7}-swarm-master"
+      image: "${MOLECULE_DISTRO:-kubecloudsas/docker-ansible-test:v1.1.0-centos7-py3}"
       command: ${MOLECULE_DOCKER_COMMAND:-""}
       volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -18,12 +18,12 @@ platforms:
       privileged: true
       pre_build_image: true
       networks:
-          - name: "${MOLECULE_DISTRO:-ubuntu16}_swarm"
+          - name: "${MOLECULE_NAME:-centos7}_swarm"
       hostname: "master0"
       groups:
           - "swarm_init"
-    - name: "${MOLECULE_DISTRO:-ubuntu16}-swarm-slave-01"
-      image: "kubecloudsas/docker-ansible-test:${MOLECULE_DISTRO:-ubuntu16}"
+    - name: "${MOLECULE_NAME:-centos7}-swarm-slave-01"
+      image: "${MOLECULE_DISTRO:-kubecloudsas/docker-ansible-test:v1.1.0-centos7-py3}"
       command: ${MOLECULE_DOCKER_COMMAND:-""}
       volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -31,7 +31,7 @@ platforms:
       privileged: true
       pre_build_image: true
       networks:
-          - name: "${MOLECULE_DISTRO:-ubuntu16}_swarm"
+          - name: "${MOLECULE_NAME:-centos7}_swarm"
       hostname: "slave1"
       groups:
           - "swarm_join"
